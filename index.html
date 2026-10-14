@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StepSnap プライバシーポリシー</title>
+<meta name="description" content="Chrome 拡張機能 StepSnap のプライバシーポリシー / Privacy Policy of the StepSnap Chrome extension">
+<style>
+  :root { --bg: #fef7ff; --card: #ffffff; --text: #1d1b20; --sub: #49454f; --line: #e7e0ec; --accent: #6750a4; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141218; --card: #1d1b20; --text: #e6e0e9; --sub: #cac4d0; --line: #36343b; --accent: #d0bcff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.8 system-ui, -apple-system, "Segoe UI", "Hiragino Sans", "Yu Gothic UI", Meiryo, sans-serif; }
+  main { max-width: 780px; margin: 0 auto; padding: 32px 16px 64px; }
+  nav { display: flex; gap: 8px; justify-content: flex-end; margin-bottom: 16px; }
+  nav a { padding: 4px 14px; border: 1px solid var(--line); border-radius: 99px; color: var(--accent); text-decoration: none; font-size: 14px; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 28px 28px 20px; margin-bottom: 24px; }
+  h1 { margin: 0 0 4px; font-size: 26px; line-height: 1.4; }
+  h1 + p { margin-top: 0; color: var(--sub); font-size: 14px; }
+  h2 { margin: 28px 0 8px; font-size: 18px; color: var(--accent); }
+  p, li { overflow-wrap: anywhere; }
+  ul { padding-left: 1.4em; margin: 8px 0; }
+  li { margin: 4px 0; }
+  @media (max-width: 480px) { section { padding: 20px 16px 12px; } h1 { font-size: 22px; } }
+</style>
+</head>
+<body>
+<main>
+<nav><a href="#ja">日本語</a><a href="#en">English</a></nav>
+<section lang="ja" id="ja">
+<h1>StepSnap プライバシーポリシー</h1>
+<p>最終更新日：2026年10月15日</p>
+<p>StepSnap（以下「本拡張機能」）は、社内の業務手順書を作成するための Chrome 拡張機能です。本拡張機能が扱う情報と、その取り扱いについて説明します。</p>
+<h2>1. 扱う情報</h2>
+<p>本拡張機能は、ユーザーが「記録を開始」を押してから「終了」を押すまでの間（一時停止中を除く）に、次の情報を記録します。</p>
+<ul><li>
+<strong>ブラウザでの操作</strong>：クリックした位置、クリックした項目の名前（ボタンやリンクの文字など）、入力欄に入力したこと、選択肢で選んだ項目の名前
+<ul><li>
+入力欄に入力した文字そのものは記録しません（「〇〇に入力」とだけ記録します）。
+</li></ul>
+</li><li>
+<strong>画面の画像</strong>：操作したときの、表示中のタブの画面の画像
+</li><li>
+<strong>ページの情報</strong>：操作したページのタイトルと URL
+</li><li>
+<strong>ブラウザ以外の画面の画像</strong>：ユーザーが記録の開始時に画面の共有を許可した場合に限り、ショートカットキーを押したときの画面の画像
+</li><li>
+<strong>話した内容を文字にしたもの</strong>：ユーザーが「音声も記録する」をオンにした場合に限ります。音声そのものは保存しません。
+</li></ul>
+<p>また、ユーザーが設定画面で入力した情報（出力先の Google Apps Script の URL、作成者名）と、画面の設定（前回選んだ出力形式や色など）を保存します。</p>
+<h2>2. 保存する場所</h2>
+<p>記録した情報と設定は、ユーザーのパソコンの Chrome の中（本拡張機能の保存領域）にだけ保存します。開発者のサーバーなどに自動で送信することはありません。</p>
+<h2>3. 送信する先</h2>
+<ul><li>
+<strong>手順書の出力</strong>：ユーザーが「Google ドキュメントに出力」または「Google スライドに出力」を押したときに限り、手順書のタイトル、作成者名、各ステップの説明・話した内容・ページのタイトルと URL・画面の画像を、ユーザーが設定した Google Apps Script のウェブアプリ（本拡張機能を利用する組織が、自身の Google Workspace の中で管理しているもの）に送信します。送信した情報は、Google ドキュメントまたは Google スライドとして、その組織の Google ドライブに保存されます。
+</li><li>
+<strong>音声の文字化</strong>：「音声も記録する」をオンにした場合は、Chrome に内蔵の音声認識機能を使います。パソコンの中で文字にできない場合、音声は Chrome によって Google のサーバーに送られ、文字にされます。この処理には Google のプライバシーポリシーが適用されます。
+</li><li>
+通信はすべて HTTPS で行います。
+</li></ul>
+<h2>4. 第三者への提供</h2>
+<p>本拡張機能が扱う情報を、販売したり、広告に使ったり、上記以外の第三者に提供したりすることはありません。手順書の作成以外の目的には使いません。</p>
+<h2>5. 情報の削除</h2>
+<ul><li>
+サイドパネルの「すべて削除」で、パソコンに保存した記録を削除できます。ステップごとに削除することもできます。
+</li><li>
+本拡張機能を Chrome から削除すると、パソコンに保存した記録と設定もすべて削除されます。
+</li><li>
+出力した手順書は、Google ドライブのファイルとして、利用する組織の規程に従って管理されます。
+</li></ul>
+<h2>6. お問い合わせ</h2>
+<p>本拡張機能についてのお問い合わせは、社内の担当者にお願いします。</p>
+<h2>7. 改定</h2>
+<p>内容を変更した場合は、このページを更新し、最終更新日を改めます。</p>
+</section>
+<section lang="en" id="en">
+<h1>StepSnap Privacy Policy</h1>
+<p>Last updated: October 15, 2026</p>
+<p>StepSnap (the &quot;Extension&quot;) is a Chrome extension for creating internal step-by-step work manuals. This policy explains what information the Extension handles and how.</p>
+<h2>1. Information the Extension handles</h2>
+<p>Only while the user is recording (from pressing &quot;記録を開始&quot; (Start recording) until &quot;終了&quot; (Stop), excluding pauses), the Extension records:</p>
+<ul><li>
+<strong>Browser actions</strong>: the position of each click, the name of the clicked element (such as button or link text), the fact that a text field was filled in, and the name of the option selected in a drop-down.
+<ul><li>
+The text typed into fields is never recorded (only &quot;Entered into [field]&quot;).
+</li></ul>
+</li><li>
+<strong>Screenshots</strong>: an image of the visible tab at the time of each action.
+</li><li>
+<strong>Page information</strong>: the title and URL of the page where the action took place.
+</li><li>
+<strong>Screen images outside the browser</strong>: only if the user allows screen sharing when starting a recording, an image of the screen each time the user presses the keyboard shortcut.
+</li><li>
+<strong>Transcribed speech</strong>: only if the user turns on &quot;音声も記録する&quot; (Record voice). Audio itself is not stored.
+</li></ul>
+<p>The Extension also stores the settings entered by the user (the URL of the Google Apps Script web app used for export and the author name) and UI preferences (such as the last selected export format and colors).</p>
+<h2>2. Where information is stored</h2>
+<p>All recorded information and settings are stored only inside Chrome on the user&#x27;s computer (the Extension&#x27;s local storage). Nothing is sent automatically to the developer&#x27;s servers or anywhere else.</p>
+<h2>3. Where information is sent</h2>
+<ul><li>
+<strong>Exporting a manual</strong>: only when the user presses &quot;Googleドキュメントに出力&quot; or &quot;Googleスライドに出力&quot; (Export to Google Docs / Slides), the manual title, author name, and each step&#x27;s description, transcribed speech, page title and URL, and screenshot are sent to the Google Apps Script web app configured by the user (managed by the organization using the Extension within its own Google Workspace). The data is saved to that organization&#x27;s Google Drive as a Google Doc or Google Slides presentation.
+</li><li>
+<strong>Speech transcription</strong>: when &quot;音声も記録する&quot; (Record voice) is on, the Extension uses Chrome&#x27;s built-in speech recognition. If speech cannot be transcribed on the device, Chrome sends the audio to Google&#x27;s servers for transcription, subject to Google&#x27;s Privacy Policy.
+</li><li>
+All communication uses HTTPS.
+</li></ul>
+<h2>4. Sharing with third parties</h2>
+<p>The Extension does not sell the information it handles, does not use it for advertising, and does not share it with any third party other than as described above. It is used only for creating manuals.</p>
+<h2>5. Deleting information</h2>
+<ul><li>
+&quot;すべて削除&quot; (Delete all) in the side panel deletes the recordings stored on the computer. Individual steps can also be deleted.
+</li><li>
+Removing the Extension from Chrome deletes all recordings and settings stored on the computer.
+</li><li>
+Exported manuals are managed as Google Drive files in accordance with the policies of the organization using the Extension.
+</li></ul>
+<h2>6. Contact</h2>
+<p>For questions about the Extension, please contact the person in charge within your organization.</p>
+<h2>7. Changes</h2>
+<p>If this policy changes, this page will be updated along with the &quot;Last updated&quot; date.</p>
+</section>
+</main>
+</body>
+</html>
