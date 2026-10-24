@@ -30,7 +30,7 @@
 <nav><a href="#ja">日本語</a><a href="#en">English</a></nav>
 <section lang="ja" id="ja">
 <h1>StepSnap プライバシーポリシー</h1>
-<p>最終更新日：2026年10月15日</p>
+<p>最終更新日：2026年10月24日</p>
 <p>StepSnap（以下「本拡張機能」）は、社内の業務手順書を作成するための Chrome 拡張機能です。本拡張機能が扱う情報と、その取り扱いについて説明します。</p>
 <h2>1. 扱う情報</h2>
 <p>本拡張機能は、ユーザーが「記録を開始」を押してから「終了」を押すまでの間（一時停止中を除く）に、次の情報を記録します。</p>
@@ -46,14 +46,38 @@
 </li><li>
 <strong>ブラウザ以外の画面の画像</strong>：ユーザーが記録の開始時に画面の共有を許可した場合に限り、ショートカットキーを押したときの画面の画像
 </li><li>
+<strong>ブラウザ以外でのクリック（Windows のみ）</strong>：ユーザーが設定で「Chrome の外のクリックも自動で撮る」をオンにし、利用する組織が配布する Windows 用の補助アプリ「StepSnap Helper」（以下「補助アプリ」）を入れている場合に限ります。Chrome の外で左クリックしたときの位置、押した項目の名前（ボタンの文字など。取れたときだけ）、そのアプリの名前と、クリックしたモニターの画面の画像を記録します。ショートカットキーを押したときは、そのときの画面の画像を記録します。
+<ul><li>
+キーボードで入力した内容は見ません。補助アプリが見るのは、マウスの左ボタンを押したことだけです。
+</li></ul>
+</li><li>
 <strong>話した内容を文字にしたもの</strong>：ユーザーが「音声も記録する」をオンにした場合に限ります。音声そのものは保存しません。
 </li></ul>
-<p>また、ユーザーが設定画面で入力した情報（出力先の Google Apps Script の URL、作成者名）と、画面の設定（前回選んだ出力形式や色など）を保存します。</p>
+<p>また、ユーザーがサイドパネルで入力した手順書の内容（タイトル、概要、必要なもの、各ステップのタイトル・説明・URL とその表示名、手で追加したステップ、ユーザーがファイルから選んだり貼り付けたりして差し替えた画像、画像に付けた赤丸・文字・ぼかしなどの書き込み）と、設定画面で入力した情報（出力先の Google Apps Script の URL、作成者名、音声も記録するか、Chrome の外のクリックも撮るか）、画面の設定（前回選んだ出力形式や色など）、今開いている手順書が保存済みかどうかを保存します。</p>
 <h2>2. 保存する場所</h2>
-<p>記録した情報と設定は、ユーザーのパソコンの Chrome の中（本拡張機能の保存領域）にだけ保存します。開発者のサーバーなどに自動で送信することはありません。</p>
+<p>記録した情報と設定は、ユーザーのパソコンの Chrome の中（本拡張機能の保存領域）に保存します。開発者のサーバーなどに送信することはありません。ユーザーが「保存」または出力を押したときだけ、次の「3. 送信する先」のとおり、利用する組織の Google ドライブにも保存します。</p>
+<p>補助アプリは、うまく動かないときに確かめるための記録ファイル（StepSnapHelper.log）を、補助アプリのフォルダの中に作ります。書くのは、起動と終了の時刻、拡張機能からの命令、クリックしたアプリのファイル名（EXCEL.EXE など）、処理にかかった時間、画像の大きさ、押した項目の名前が取れたかどうかと項目の種類、使っているメモリの量だけです。押した項目の名前、ウィンドウの題名、画面の画像は書きません。このファイルはどこにも送りません。</p>
 <h2>3. 送信する先</h2>
 <ul><li>
-<strong>手順書の出力</strong>：ユーザーが「Google ドキュメントに出力」または「Google スライドに出力」を押したときに限り、手順書のタイトル、作成者名、各ステップの説明・話した内容・ページのタイトルと URL・画面の画像を、ユーザーが設定した Google Apps Script のウェブアプリ（本拡張機能を利用する組織が、自身の Google Workspace の中で管理しているもの）に送信します。送信した情報は、Google ドキュメントまたは Google スライドとして、その組織の Google ドライブに保存されます。
+<strong>手順書の出力（Google ドキュメント・Google スライド・Notion・Word・PDF）</strong>：ユーザーが出力ボタンを押したときに限り、手順書の内容（タイトル、作成者名、概要、必要なもの、各ステップのタイトル・説明・ページのタイトルと URL・画面の画像）を、ユーザーが設定した Google Apps Script のウェブアプリ（本拡張機能を利用する組織が、自身の Google Workspace の中で管理しているもの）に送信します。
+<ul><li>
+Google ドキュメント・Google スライドを選んだ場合は、その組織の Google ドライブに保存されます。
+</li><li>
+Notion を選んだ場合は、そのウェブアプリから、組織が設定した Notion のワークスペースに送られ、データベースの1行として保存されます。Notion での取り扱いには、Notion のプライバシーポリシーが適用されます。
+</li><li>
+Word・PDF を選んだ場合は、そのウェブアプリで変換したファイルを受け取り、ユーザーのパソコンに保存します。変換のために一時的に作った Google ドキュメント・Google スライドは、すぐにごみ箱に移します。
+</li></ul>
+</li><li>
+<strong>手順書の保存（「保存」と「手順書の一覧」）</strong>：ユーザーが「保存」または出力を押したときに限り、後から開いて直せるよう、手順書の内容（上の項目に加え、書き込みを付ける前の元の画面の画像と、赤丸・文字・ぼかしなどの書き込み）を、同じウェブアプリを通して、その組織の Google ドライブの保存先フォルダに保存します。保存した人の Google アカウントのメールアドレスと作成者名、保存した日時も一緒に保存します。
+<ul><li>
+保存した手順書は、その組織で本拡張機能を使う人が一覧で見て、開いて直したり、削除したりできます。開いたときは、内容をこのパソコンの Chrome の中に読み込みます。
+</li><li>
+ぼかしは書き込みとして保存するため、保存先のフォルダを見られる人は、ぼかしを付ける前の元の画像を見ることができます。
+</li></ul>
+</li><li>
+<strong>HTML の保存</strong>：HTML を選んだ場合は、本拡張機能の中で作成し、ユーザーのパソコンに保存します（組織の Google Apps Script を設定している場合は、上の「手順書の保存」も行います）。
+</li><li>
+<strong>補助アプリとのやり取り</strong>：本拡張機能と補助アプリは、Chrome のネイティブメッセージングを使って、ユーザーのパソコンの中だけでやり取りします。補助アプリは、Chrome の外のクリックも撮る設定で記録を始めたときに起動し、記録を終えると終了します。補助アプリはインターネットなど外部とは通信しません。
 </li><li>
 <strong>音声の文字化</strong>：「音声も記録する」をオンにした場合は、Chrome に内蔵の音声認識機能を使います。パソコンの中で文字にできない場合、音声は Chrome によって Google のサーバーに送られ、文字にされます。この処理には Google のプライバシーポリシーが適用されます。
 </li><li>
@@ -63,11 +87,15 @@
 <p>本拡張機能が扱う情報を、販売したり、広告に使ったり、上記以外の第三者に提供したりすることはありません。手順書の作成以外の目的には使いません。</p>
 <h2>5. 情報の削除</h2>
 <ul><li>
-サイドパネルの「すべて削除」で、パソコンに保存した記録を削除できます。ステップごとに削除することもできます。
+サイドパネルの「新しい手順書」で、パソコンに保存した記録を削除できます。ステップごとに削除することも、「選択」で選んだステップをまとめて削除することもできます。
+</li><li>
+組織の Google ドライブに保存した手順書は、「手順書の一覧」の削除で、ドライブのごみ箱に移ります（ごみ箱からは、30日で消えます）。
 </li><li>
 本拡張機能を Chrome から削除すると、パソコンに保存した記録と設定もすべて削除されます。
 </li><li>
-出力した手順書は、Google ドライブのファイルとして、利用する組織の規程に従って管理されます。
+補助アプリは、付属の uninstall.bat で Chrome への登録を外し、補助アプリのフォルダ（記録ファイルを含む）を削除すると、何も残りません。
+</li><li>
+出力した手順書は、Google ドライブのファイル・Notion のページ・パソコンのファイルとして、利用する組織の規程に従って管理されます。
 </li></ul>
 <h2>6. お問い合わせ</h2>
 <p>本拡張機能についてのお問い合わせは、社内の担当者にお願いします。</p>
@@ -76,7 +104,7 @@
 </section>
 <section lang="en" id="en">
 <h1>StepSnap Privacy Policy</h1>
-<p>Last updated: October 15, 2026</p>
+<p>Last updated: October 24, 2026</p>
 <p>StepSnap (the &quot;Extension&quot;) is a Chrome extension for creating internal step-by-step work manuals. This policy explains what information the Extension handles and how.</p>
 <h2>1. Information the Extension handles</h2>
 <p>Only while the user is recording (from pressing &quot;記録を開始&quot; (Start recording) until &quot;終了&quot; (Stop), excluding pauses), the Extension records:</p>
@@ -92,14 +120,38 @@ The text typed into fields is never recorded (only &quot;Entered into [field]&qu
 </li><li>
 <strong>Screen images outside the browser</strong>: only if the user allows screen sharing when starting a recording, an image of the screen each time the user presses the keyboard shortcut.
 </li><li>
+<strong>Clicks outside the browser (Windows only)</strong>: only if the user turns on &quot;Chrome の外のクリックも自動で撮る&quot; (Also capture clicks outside Chrome) in the settings and has installed &quot;StepSnap Helper&quot;, a small Windows helper app distributed by the organization using the Extension (the &quot;Helper&quot;). For each left click outside Chrome, the Extension records the click position, the name of the clicked element (such as button text, only when available), the name of the app, and an image of the monitor that was clicked. When the user presses the keyboard shortcut, an image of the screen at that time is recorded.
+<ul><li>
+Keyboard input is never read. The Helper only detects presses of the left mouse button.
+</li></ul>
+</li><li>
 <strong>Transcribed speech</strong>: only if the user turns on &quot;音声も記録する&quot; (Record voice). Audio itself is not stored.
 </li></ul>
-<p>The Extension also stores the settings entered by the user (the URL of the Google Apps Script web app used for export and the author name) and UI preferences (such as the last selected export format and colors).</p>
+<p>The Extension also stores the manual content entered by the user in the side panel (the title, overview, required items, each step&#x27;s title, description, URL and its display name, steps added by hand, images the user replaced by choosing a file or pasting, and annotations such as circles, text and blur added to images), the settings entered by the user (the URL of the Google Apps Script web app used for export, the author name, whether to record voice, and whether to capture clicks outside Chrome), UI preferences (such as the last selected export format and colors), and whether the manual currently open has been saved.</p>
 <h2>2. Where information is stored</h2>
-<p>All recorded information and settings are stored only inside Chrome on the user&#x27;s computer (the Extension&#x27;s local storage). Nothing is sent automatically to the developer&#x27;s servers or anywhere else.</p>
+<p>All recorded information and settings are stored inside Chrome on the user&#x27;s computer (the Extension&#x27;s local storage). Nothing is sent to the developer&#x27;s servers. Only when the user presses &quot;保存&quot; (Save) or an export button, the manual is also saved to the Google Drive of the organization using the Extension, as described in section 3.</p>
+<p>The Helper writes a log file (StepSnapHelper.log) in its own folder, for troubleshooting. It contains only start and stop times, the commands received from the Extension, the file name of the clicked app (such as EXCEL.EXE), processing times, image sizes, whether the name of the clicked element was found and the element&#x27;s type, and memory usage. It never contains the names of clicked elements, window titles, or screen images. This file is never sent anywhere.</p>
 <h2>3. Where information is sent</h2>
 <ul><li>
-<strong>Exporting a manual</strong>: only when the user presses &quot;Googleドキュメントに出力&quot; or &quot;Googleスライドに出力&quot; (Export to Google Docs / Slides), the manual title, author name, and each step&#x27;s description, transcribed speech, page title and URL, and screenshot are sent to the Google Apps Script web app configured by the user (managed by the organization using the Extension within its own Google Workspace). The data is saved to that organization&#x27;s Google Drive as a Google Doc or Google Slides presentation.
+<strong>Exporting a manual (Google Docs, Google Slides, Notion, Word, PDF)</strong>: only when the user presses the export button, the manual content (title, author name, overview, required items, and each step&#x27;s title, description, page title and URL, and screenshot) is sent to the Google Apps Script web app configured by the user (managed by the organization using the Extension within its own Google Workspace).
+<ul><li>
+For Google Docs and Google Slides, the manual is saved to that organization&#x27;s Google Drive.
+</li><li>
+For Notion, the web app sends the manual to the Notion workspace configured by the organization, where it is saved as a row in a database. Notion&#x27;s Privacy Policy applies to its handling there.
+</li><li>
+For Word and PDF, the Extension receives the file converted by the web app and saves it on the user&#x27;s computer. The temporary Google Doc or Google Slides presentation created for the conversion is moved to the trash immediately.
+</li></ul>
+</li><li>
+<strong>Saving manuals (&quot;保存&quot; (Save) and &quot;手順書の一覧&quot; (Manual list))</strong>: only when the user presses &quot;保存&quot; (Save) or an export button, so that the manual can be opened and edited later, the manual content (the items above, plus the original screenshots before annotation and the annotations such as circles, text and blur) is saved through the same web app to the configured folder in that organization&#x27;s Google Drive, together with the Google account email address and author name of the person who saved it and the time it was saved.
+<ul><li>
+Saved manuals can be listed, opened, edited and deleted by people in that organization who use the Extension. When a manual is opened, its content is loaded into Chrome on that computer.
+</li><li>
+Because blur is saved as an annotation, people who can view the folder can see the original screenshots before blur was applied.
+</li></ul>
+</li><li>
+<strong>Saving as HTML</strong>: for HTML, the file is created inside the Extension and saved on the user&#x27;s computer (if the organization&#x27;s Google Apps Script web app is configured, the manual is also saved as described above).
+</li><li>
+<strong>Communication with the Helper</strong>: the Extension and the Helper communicate only within the user&#x27;s computer, using Chrome&#x27;s native messaging. The Helper starts only when a recording starts with capturing clicks outside Chrome turned on, and exits when the recording stops. The Helper does not communicate with the internet or any other external service.
 </li><li>
 <strong>Speech transcription</strong>: when &quot;音声も記録する&quot; (Record voice) is on, the Extension uses Chrome&#x27;s built-in speech recognition. If speech cannot be transcribed on the device, Chrome sends the audio to Google&#x27;s servers for transcription, subject to Google&#x27;s Privacy Policy.
 </li><li>
@@ -109,11 +161,15 @@ All communication uses HTTPS.
 <p>The Extension does not sell the information it handles, does not use it for advertising, and does not share it with any third party other than as described above. It is used only for creating manuals.</p>
 <h2>5. Deleting information</h2>
 <ul><li>
-&quot;すべて削除&quot; (Delete all) in the side panel deletes the recordings stored on the computer. Individual steps can also be deleted.
+&quot;新しい手順書&quot; (New manual) in the side panel deletes the recordings stored on the computer. Steps can also be deleted one by one, or several at once with &quot;選択&quot; (Select).
+</li><li>
+Manuals saved to the organization&#x27;s Google Drive are moved to the Drive trash when deleted from &quot;手順書の一覧&quot; (Manual list) (items in the trash are removed after 30 days).
 </li><li>
 Removing the Extension from Chrome deletes all recordings and settings stored on the computer.
 </li><li>
-Exported manuals are managed as Google Drive files in accordance with the policies of the organization using the Extension.
+The Helper leaves nothing behind once it is unregistered from Chrome with the included uninstall.bat and its folder (including the log file) is deleted.
+</li><li>
+Exported manuals are managed as Google Drive files, Notion pages, or files on the computer in accordance with the policies of the organization using the Extension.
 </li></ul>
 <h2>6. Contact</h2>
 <p>For questions about the Extension, please contact the person in charge within your organization.</p>
